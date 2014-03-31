@@ -19,6 +19,13 @@
     "url": "git://github.com/casualrelaxation/gulp-css-url-adjuster.git"
   },
 
+  "keywords": [
+    "gulpplugin",
+    "css",
+    "url",
+    "image"
+  ],
+
   "author": "Trent <casualrelaxation@gmail.com>",
   "license": "MIT",
   "homepage": "https://github.com/casualrelaxation/gulp-css-url-adjuster"
