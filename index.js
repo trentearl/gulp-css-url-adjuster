@@ -3,6 +3,7 @@ var through = require('through2');
 
 module.exports = function(options) {
   var prepend = options.prepend;
+  var prependRelative = options.prependRelative;
   var append = options.append;
 
   function prependUrls(css) {
@@ -14,13 +15,15 @@ module.exports = function(options) {
           var newUrl = url;
           if (prepend) {
             newUrl = prepend + newUrl;
+          } else if (prependRelative && url.charAt(0) != '/') {
+            newUrl = prependRelative + newUrl;
           }
 
           if (append) {
             newUrl = newUrl + append;
           }
 
-          return newUrl;
+          return newUrl.replace('//', '/');
         }
       }))
       .toString();

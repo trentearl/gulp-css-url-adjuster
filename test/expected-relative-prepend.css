@@ -3,10 +3,11 @@ div {
 }
 
 div {
-  background-image: url("prepend/absolute.jpg");
+  background-image: url("/absolute.jpg");
 }
 
 span {
   background-image: url("data:image/jpg;base64,/9j/ke4uvs");
 }
+
 

@@ -22,3 +22,31 @@ css file:
     .cool-background {
         background-image: url('/image_directory/coolImage.jpg?version=1');
     }
+
+
+only adjust relative paths:
+
+    .cool-background {
+        background-image: url('coolImage.jpg');
+    }
+
+    .neato-background {
+        background-image: url('/images/neatoImage.jpg');
+    }
+
+    gulp.src('style.css')
+      pipe(urlAdjuster({
+        prependRelative: '/image_directory/',
+      })
+      .pipe(gulp.dest('modifiedStyle.css'));
+
+
+    .cool-background {
+        background-image: url('/image_directory/coolImage.jpg');
+    }
+
+    .neato-background {
+        background-image: url('/images/neatoImage.jpg');
+    }
+
+

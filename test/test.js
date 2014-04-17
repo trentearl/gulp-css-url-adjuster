@@ -22,7 +22,8 @@ test('prepends url', function(t) {
 
   stream.once('data', function(file) {
     t.equal(file.contents.toString('utf8').trim(),
-            read('expected-prepend.css').toString().trim());
+            read('expected-prepend.css').toString().trim(),
+           'prepend');
   });
 
   stream.end();
@@ -71,4 +72,24 @@ test('appends and prepend url', function(t) {
   t.end();
   
 });
+
+test('prepends relative url', function(t) {
+  var stream = cssAdjuster({
+    prependRelative: 'prepend/',
+  });
+
+  stream.write(new gutil.File({
+    contents: read('test.css')
+  }));
+
+  stream.once('data', function(file) {
+    t.equal(file.contents.toString('utf8').trim(),
+            read('expected-relative-prepend.css').toString().trim());
+  });
+
+  stream.end();
+
+  t.end();
+});
+
 
