@@ -13,7 +13,7 @@ var testContents = read('test.css');
 
 test('prepends url', function(t) {
   var stream = cssAdjuster({
-    prepend: '/prepend'
+    prepend: 'prepend/'
   });
 
   stream.write(new gutil.File({
@@ -53,7 +53,7 @@ test('appends url', function(t) {
 
 test('appends and prepend url', function(t) {
   var stream = cssAdjuster({
-    prepend: '/prepend',
+    prepend: 'prepend/',
     append: '?append'
   });
 

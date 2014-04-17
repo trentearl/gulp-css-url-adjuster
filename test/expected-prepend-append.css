@@ -1,5 +1,5 @@
 div {
-  background-image: url("/prepend/pizza.jpg?append");
+  background-image: url("prepend/pizza.jpg?append");
 }
 
 span {
