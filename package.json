@@ -1,6 +1,6 @@
 {
   "name": "gulp-css-url-adjuster",
-  "version": "0.0.3",
+  "version": "0.1.0",
   "description": "Adjust urls inside css",
   "main": "index.js",
 

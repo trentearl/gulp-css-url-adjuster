@@ -32,6 +32,26 @@ test('prepends url', function(t) {
   
 });
 
+test('appends url function', function(t) {
+  var stream = cssAdjuster({
+    append: function(s) { return s + '?append'; }
+  });
+
+  stream.write(new gutil.File({
+    contents: read('test.css')
+  }));
+
+  stream.once('data', function(file) {
+    t.equal(file.contents.toString('utf8').trim(),
+            read('expected-append.css').toString().trim());
+  });
+
+  stream.end();
+
+  t.end();
+  
+});
+
 test('appends url', function(t) {
   var stream = cssAdjuster({
     append: '?append'

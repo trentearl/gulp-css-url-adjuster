@@ -20,7 +20,11 @@ module.exports = function(options) {
           }
 
           if (append) {
-            newUrl = newUrl + append;
+            if (typeof append == 'function') {
+              newUrl = append(url);
+            } else {
+              newUrl = newUrl + append;
+            }
           }
 
           return newUrl.replace('//', '/');
