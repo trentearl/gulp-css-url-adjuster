@@ -11,11 +11,11 @@ css file:
 
     var urlAdjuster = require('gulp-css-url-adjuster');
 
-    gulp.src('style.css')
+    gulp.src('style.css').
       pipe(urlAdjuster({
         prepend: '/image_directory/',
         append: '?version=1'
-      })
+      }))
       .pipe(gulp.dest('modifiedStyle.css'));
 
 
@@ -34,10 +34,10 @@ only adjust relative paths:
         background-image: url('/images/neatoImage.jpg');
     }
 
-    gulp.src('style.css')
+    gulp.src('style.css').
       pipe(urlAdjuster({
         prependRelative: '/image_directory/',
-      })
+      }))
       .pipe(gulp.dest('modifiedStyle.css'));
 
 
