@@ -5,7 +5,7 @@
   "main": "index.js",
 
   "dependencies": {
-    "rework": "~0.20.2",
+    "rework": "~1.0.1",
     "through2": "~1.0.0",
     "gulp-util": "latest"
   },
