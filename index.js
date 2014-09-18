@@ -1,4 +1,5 @@
 var rework = require('rework');
+var url = require('rework-plugin-url');
 var through = require('through2');
 
 module.exports = function(options) {
@@ -8,7 +9,7 @@ module.exports = function(options) {
 
   function prependUrls(css) {
     return rework(css)
-      .use(rework.url(function(url) {
+      .use(url(function(url) {
         if (url.indexOf('data:') === 0) {
           return url;
         } else {
