@@ -4,6 +4,7 @@ var through = require('through2');
 
 module.exports = function(options) {
   var prepend = options.prepend;
+  var replace = options.replace;
   var prependRelative = options.prependRelative;
   var append = options.append;
 
@@ -25,6 +26,14 @@ module.exports = function(options) {
               newUrl = append(url);
             } else {
               newUrl = newUrl + append;
+            }
+          }
+
+          if (replace) {
+            if (typeof replace == 'function') {
+              newUrl = replace(url);
+            } else {
+              newUrl = newUrl.replace(replace[0],replace[1]);
             }
           }
 

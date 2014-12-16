@@ -14,7 +14,7 @@ css file:
     gulp.src('style.css').
       pipe(urlAdjuster({
         prepend: '/image_directory/',
-        append: '?version=1'
+        append: '?version=1',
       }))
       .pipe(gulp.dest('modifiedStyle.css'));
 
@@ -47,6 +47,31 @@ only adjust relative paths:
 
     .neato-background {
         background-image: url('/images/neatoImage.jpg');
+    }
+
+or replace path to another:
+
+    .cool-background {
+        background-image: url('/old/path/coolImage.jpg');
+    }
+
+    .neato-background {
+        background-image: url('/old/path/images/neatoImage.jpg');
+    }
+
+    gulp.src('style.css').
+      pipe(urlAdjuster({
+        replace:  ['/old/path','/brand/new'],
+      }))
+      .pipe(gulp.dest('modifiedStyle.css'));
+
+
+    .cool-background {
+        background-image: url('/brand/new/coolImage.jpg');
+    }
+
+    .neato-background {
+        background-image: url('/brand/new/images/neatoImage.jpg');
     }
 
 
