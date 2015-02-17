@@ -8,7 +8,7 @@ module.exports = function(options) {
   var prependRelative = options.prependRelative;
   var append = options.append;
 
-  function prependUrls(css) {
+  function prependUrls(css, filename) {
     return rework(css)
       .use(reworkUrl(function(url) {
         if (url.indexOf('data:') === 0) {
@@ -23,7 +23,7 @@ module.exports = function(options) {
 
           if (append) {
             if (typeof append == 'function') {
-              newUrl = append(url);
+              newUrl = append(url, filename);
             } else {
               newUrl = newUrl + append;
             }
@@ -31,7 +31,7 @@ module.exports = function(options) {
 
           if (replace) {
             if (typeof replace == 'function') {
-              newUrl = replace(url);
+              newUrl = replace(url, filename);
             } else {
               newUrl = newUrl.replace(replace[0],replace[1]);
             }
@@ -44,7 +44,7 @@ module.exports = function(options) {
   };
 
   return through.obj(function(file, enc, cb) {
-    var css = prependUrls(file.contents.toString());
+    var css = prependUrls(file.contents.toString(), file.path);
     file.contents = new Buffer(css);
 
     this.push(file);
