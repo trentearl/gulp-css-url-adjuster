@@ -33,7 +33,14 @@ module.exports = function(options) {
             if (typeof replace == 'function') {
               newUrl = replace(url);
             } else {
-              newUrl = newUrl.replace(replace[0],replace[1]);
+              if (Array.isArray(replace[0])) {
+                replace[0].forEach(function(el) {
+                  newUrl = newUrl.replace(el, replace[1])
+                });
+              }
+              else {
+                newUrl = newUrl.replace(replace[0],replace[1]);
+              }
             }
           }
 

@@ -12,9 +12,9 @@ span {
 
 
 .test {
-  background: url(../../test/lol.jpg);
+  background: url(/images/test/lol.jpg);
 }
 
 .test2 {
-  background: url(../test/lol2.jpg);
+  background: url(/images/test/lol2.jpg);
 }
