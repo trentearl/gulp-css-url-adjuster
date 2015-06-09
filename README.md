@@ -7,6 +7,9 @@ https://github.com/sindresorhus/gulp-rework
 
 https://github.com/trentearl/gulp-css-url-adjuster/issues/20#issuecomment-109732884
 
+
+---
+
 This package allows gulp to change css urls
 
 css file:
