@@ -1,7 +1,11 @@
 gulp-css-url-adjuster
 =====================
 
-## Please consider using https://github.com/sindresorhus/gulp-rework see: https://github.com/trentearl/gulp-css-url-adjuster/issues/20#issuecomment-109732884
+## Please consider using gulp-rework
+
+https://github.com/sindresorhus/gulp-rework
+
+https://github.com/trentearl/gulp-css-url-adjuster/issues/20#issuecomment-109732884
 
 This package allows gulp to change css urls
 
