@@ -6,6 +6,14 @@ div {
   background-image: url("/absolute.jpg");
 }
 
+div {
+  background-image: url("http://www.google.com/images/srpr/logo11w.png");
+}
+
+div {
+  background-image: url("//images/srpr/logo11w.png");
+}
+
 span {
   background-image: url('data:image/jpg;base64,/9j/ke4uvs');
 }

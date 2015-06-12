@@ -15,6 +15,14 @@
     "tap": "latest"
   },
 
+  "directories": {
+    "test": "test"
+  },
+
+  "scripts": {
+    "test": "tap ./test/test.js"
+  },
+
   "repository": {
     "type": "git",
     "url": "git://github.com/casualrelaxation/gulp-css-url-adjuster.git"
