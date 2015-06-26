@@ -11,6 +11,26 @@ var read = function(name) {
 
 var testContents = read('test.css');
 
+test('replace url', function(t) {
+  var stream = cssAdjuster({
+    replace: [['../../../test', '../../test'], '/images/test'],
+  });
+
+  stream.write(new gutil.File({
+    contents: read('test.css')
+  }));
+
+  stream.once('data', function(file) {
+    t.equal(file.contents.toString('utf8').trim(),
+            read('expected-replace.css').toString().trim());
+  });
+
+  stream.end();
+
+  t.end();
+});
+
+
 test('prepends url', function(t) {
   var stream = cssAdjuster({
     prepend: 'prepend/'

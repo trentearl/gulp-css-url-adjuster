@@ -86,3 +86,32 @@ gulp.src('style.css').
     background-image: url('/brand/new/images/neatoImage.jpg');
 }
 ```
+
+If you have different url to replace with the same base :
+```css
+.cool-background {
+    background-image: url('../../theme-base/images/neatoImage.jpg');
+}
+
+/* css in subfolder */
+.neato-background {
+    background-image: url('../../../theme-base/images/neatoImage.jpg');
+}
+```
+
+```js
+gulp.src('style.css').
+  pipe(urlAdjuster({
+    replace:  [['../../../theme-base','../../theme-base/images'], '/_ui/images'],
+  }))
+  .pipe(gulp.dest('modifiedStyle.css'));
+```
+```css
+.cool-background {
+    background-image: url('/_ui/images/coolImage.jpg');
+}
+
+.neato-background {
+    background-image: url('/_ui/images/neatoImage.jpg');
+}
+```
