@@ -11,7 +11,7 @@ module.exports = function(options) {
   function prependUrls(css) {
     return rework(css)
       .use(reworkUrl(function(url) {
-        if (url.indexOf('data:') === 0) {
+        if (~url.indexOf('data:')) {
           return url;
         } else {
           var newUrl = url;
