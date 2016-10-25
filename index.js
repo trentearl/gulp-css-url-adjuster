@@ -37,7 +37,7 @@ module.exports = function(options) {
             }
           }
 
-          return newUrl.replace('//', '/');
+          return newUrl.replace(/([^:])\/\//g, '$1/');
         }
       }))
       .toString();
