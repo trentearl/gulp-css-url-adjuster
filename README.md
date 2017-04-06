@@ -1,7 +1,7 @@
 gulp-css-url-adjuster
 =====================
 
-## Please consider using gulp-rework
+# Notice: This package is no longer maintained. Please consider using gulp-rework
 
 https://github.com/sindresorhus/gulp-rework
 
